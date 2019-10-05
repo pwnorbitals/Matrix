@@ -164,7 +164,7 @@ T Matrix<T>::det() const {
 
 	// OTHER CASES
 	
-	throw std::runtime_error("Path not handled for det computation");
+	throw std::exception("Path not handled for det computation");
 
 }
 
@@ -333,7 +333,7 @@ T Matrix<T>::norm() const {
 		return std::sqrt(total);
 	}
 
-	throw std::runtime_error("Path not handled");
+	throw std::exception("Path not handled");
 };
 
 template<class T>

@@ -14,7 +14,6 @@ public:
 	// CONSTRUCTORS & DESTRUCTORS
 	Matrix() : data{ {T{}} } {}; // Implemented
 	Matrix(std::vector<std::vector<T>> _data) : data(_data) {}; // Implemented
-	// Matrix<T>(std::vector<std::vector<T>>&& _data) : data(_data) {}; // Implemented
 	Matrix(size_t const lines, size_t const cols) : data(lines, std::vector<T>(cols, T())) {}; // Implemented
 	template<class T2> Matrix(Matrix<T2> const& other) : data(other.data) {}; // Implemented
 
@@ -25,9 +24,7 @@ public:
 	Matrix<T> line(size_t pos) const; // Implemented
 	Matrix<T> col(size_t pos) const; // Implemented
 	void setLine(size_t pos, std::vector<T> data); // Implemented
-	void setLine(size_t pos, std::vector<T>&& data);
 	void setCol(size_t pos, std::vector<T> data); // Implemented
-	void setCol(size_t pos, std::vector<T>&& data);
 	void setLine(size_t pos, Matrix<T> data); // Implemented
 	void setCol(size_t pos, Matrix<T> data); // Implemented
 	Matrix<T> truncate(size_t x, size_t y) const; // Implemented
@@ -74,7 +71,6 @@ public:
 	
 	// OTHERS
 	template<class T2> auto dot(Matrix<T2> const& other) const;  // Implemented, tested
-	template<class T2> auto dot(Matrix<T> const&& other) const;
 	bool isDiagonal() const; // Implemented
 	
 

@@ -2,7 +2,7 @@
 #define MATRIX_TEST_H
 
 #include <stdexcept>
-#include <iostream>
+#include <exception>
 #include "matrix_def.h"
 #include "matrix_test_def.h"
 
